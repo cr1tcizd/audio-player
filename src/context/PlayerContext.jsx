@@ -14,7 +14,7 @@ const PlayerContextProvider = (props) => {
 
   const [time, setTime] = useState({
     currentTime: {
-      second: audioRef.current.currentTime,
+      second: 0,
       minute: 0,
     },
     totalTime: {
@@ -32,8 +32,12 @@ const PlayerContextProvider = (props) => {
             minute: Math.floor(audioRef.current.currentTime / 60),
           },
           totalTime: {
-            second: Math.floor(audioRef.current.duration % 60),
-            minute: Math.floor(audioRef.current.duration / 60),
+            second: Math.floor(audioRef.current.duration % 60)
+              ? Math.floor(audioRef.current.duration % 60)
+              : 0,
+            minute: Math.floor(audioRef.current.duration / 60)
+              ? Math.floor(audioRef.current.duration / 60)
+              : 0,
           },
         });
       };
