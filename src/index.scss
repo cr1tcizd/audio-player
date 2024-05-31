@@ -1,0 +1,30 @@
+@import-normalize;
+
+:root {
+  --main-background: #121212;
+  --grey-background: #212121;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--main-background);
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+  
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1440px;
+}

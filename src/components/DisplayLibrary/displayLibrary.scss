@@ -1,0 +1,20 @@
+.display-home {
+
+  &__detail {
+    display: flex;
+    align-items: center;
+
+    &-number {
+      width: 20px;
+      text-align: center;
+      margin-right: 40px;
+    }
+
+    &-title {
+    }
+
+    &-time {
+      margin-left: auto;
+    }
+  }
+}
