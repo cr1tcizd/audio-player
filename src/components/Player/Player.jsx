@@ -4,8 +4,22 @@ import { useContext } from "react";
 import { PlayerContext } from "../../context/PlayerContext";
 
 export const Player = () => {
-  const { audioRef, track, seekBg, seekBar, playStatus, play, pause, time } =
-    useContext(PlayerContext);
+  const {
+    audioRef,
+    track,
+    seekBg,
+    seekBar,
+    playStatus,
+    play,
+    pause,
+    mute,
+    time,
+    muted,
+    seekSong,
+    seekVolume,
+    volume,
+    seekVolumeBg,
+  } = useContext(PlayerContext);
 
   if ((time.totalTime.minute && time.totalTime.second) === isNaN) {
     time.totalTime.minute = 0;
@@ -15,7 +29,7 @@ export const Player = () => {
   return (
     <div className="player">
       <div className="player-row">
-        <div ref={seekBg} className="player__progress">
+        <div ref={seekBg} onClick={seekSong} className="player__progress">
           <hr
             ref={seekBar}
             style={{
@@ -65,8 +79,21 @@ export const Player = () => {
             </p>
           </div>
           <div className="player__right__volume">
-            <assets.volume_icon className="player__btn" />
-            <div className="player__right__volume-progress"></div>
+            {muted ? (
+              <assets.volumeMuted_icon className="player__btn" onClick={mute} />
+            ) : (
+              <assets.volume_icon className="player__btn" onClick={mute} />
+            )}
+            <div
+              ref={seekVolumeBg}
+              className="player__right__volume-progress"
+              onClick={seekVolume}
+            >
+              <hr
+                className="player__right__volume-progress__bar"
+                style={{ width: `${volume}%` }}
+              />
+            </div>
           </div>
         </div>
       </div>

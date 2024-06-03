@@ -3,6 +3,9 @@
   &__detail {
     display: flex;
     align-items: center;
+    color: #a7a7a7;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #a7a7a7;
 
     &-number {
       width: 20px;

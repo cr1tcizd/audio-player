@@ -8,9 +8,12 @@ const PlayerContextProvider = (props) => {
   const audioRef = useRef("");
   const seekBg = useRef();
   const seekBar = useRef();
+  const seekVolumeBg = useRef();
 
   const [track, setTrack] = useState(localMusicData[0]);
   const [playStatus, setPlayStatus] = useState(false);
+  const [muted, setMuted] = useState(audioRef.current.muted);
+  const [volume, setVolume] = useState(100);
 
   const [time, setTime] = useState({
     currentTime: {
@@ -54,6 +57,25 @@ const PlayerContextProvider = (props) => {
     setPlayStatus(false);
   };
 
+  const mute = () => {
+    audioRef.current.muted
+      ? (audioRef.current.muted = false)
+      : (audioRef.current.muted = true);
+    setMuted(audioRef.current.muted);
+  };
+
+  const seekSong = (e) => {
+    audioRef.current.currentTime =
+      (e.nativeEvent.offsetX / seekBg.current.offsetWidth) *
+      audioRef.current.duration;
+  };
+
+  const seekVolume = (e) => {
+    audioRef.current.volume =
+      e.nativeEvent.offsetX / seekVolumeBg.current.offsetWidth;
+    setVolume((e.nativeEvent.offsetX / seekVolumeBg.current.offsetWidth) * 100);
+  };
+
   const contextValue = {
     audioRef,
     seekBg,
@@ -66,6 +88,14 @@ const PlayerContextProvider = (props) => {
     setTime,
     play,
     pause,
+    mute,
+    muted,
+    setMuted,
+    seekSong,
+    seekVolume,
+    volume,
+    setVolume,
+    seekVolumeBg,
   };
 
   return (

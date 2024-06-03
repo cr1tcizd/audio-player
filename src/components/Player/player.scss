@@ -22,6 +22,7 @@
     left: 0;
     background: #656565;
     border-radius: 999px;
+    cursor: pointer;
 
     &__bar {
       position: absolute;
@@ -67,6 +68,7 @@
     column-gap: 24px;
 
     &__progress-time {
+      width: 81px;
       display: flex;
       column-gap: 4px;
       font-weight: 500;
@@ -79,13 +81,23 @@
       column-gap: 12px;
       align-items: center;
 
-
       &-progress {
+        position: relative;
         width: 77px;
         height: 4px;
-        background-color: #fff;
+        background-color: #656565;
         border-radius: 999px;
-
+        cursor: pointer;
+        
+        &__bar {
+          position: absolute;
+          top: -8px;
+          left: 0;
+          height: inherit;
+          border: none;
+          background: #fff;
+          border-radius: 9999px;
+        }
       }
     }
   }

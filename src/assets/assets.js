@@ -11,6 +11,7 @@ import arrowLeft_icon from './arrow-left.svg?react'
 import arrowRight_icon from './arrow-right.svg?react'
 import search__icon from './search.svg?react'
 import watch_icon from './watch.svg?react'
+import volumeMuted_icon from './volume-muted.svg?react'
 
 import song1 from './Imagine Dragons - Bones.mp3'
 import song2 from './Imagine Dragons - Believer.mp3'
@@ -31,6 +32,7 @@ export const assets = {
   arrowRight_icon,
   search__icon,
   watch_icon,
+  volumeMuted_icon,
 }
 
 export const localMusicData = [
