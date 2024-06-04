@@ -37,7 +37,7 @@ export const AlbumItem = ({ album }) => {
             id={track.id}
             image={track.image}
             duration={track.duration}
-            track={track}
+            song={track}
           />
         ))}
       </div>
