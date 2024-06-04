@@ -27,6 +27,7 @@
 .track:hover {
   .track__number-play {
     display: block;
+    cursor: pointer;
   }
   .track__number-num {
     display: none;

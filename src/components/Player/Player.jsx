@@ -55,9 +55,15 @@ export const Player = () => {
           <assets.backward_icon className="player__btn" />
 
           {playStatus ? (
-            <assets.pause_icon className="player__btn" onClick={pause} />
+            <assets.pause_icon
+              className="player__btn player__btn__play"
+              onClick={pause}
+            />
           ) : (
-            <assets.play_icon className="player__btn" onClick={play} />
+            <assets.play_icon
+              className="player__btn player__btn__play"
+              onClick={play}
+            />
           )}
 
           <assets.forward_icon className="player__btn" />

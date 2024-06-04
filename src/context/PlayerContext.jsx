@@ -76,6 +76,12 @@ const PlayerContextProvider = (props) => {
     setVolume((e.nativeEvent.offsetX / seekVolumeBg.current.offsetWidth) * 100);
   };
 
+  const playWithTrack = async (track) => {
+    await setTrack(track);
+    await audioRef.current.play();
+    setPlayStatus(true);
+  };
+
   const contextValue = {
     audioRef,
     seekBg,
@@ -96,6 +102,7 @@ const PlayerContextProvider = (props) => {
     volume,
     setVolume,
     seekVolumeBg,
+    playWithTrack,
   };
 
   return (

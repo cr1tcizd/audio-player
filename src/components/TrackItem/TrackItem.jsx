@@ -4,13 +4,7 @@ import "./TrackItem.scss";
 import { PlayerContext } from "../../context/PlayerContext";
 
 export const TrackItem = ({ audioRef, track, title, image, duration, id }) => {
-  const { setTrack, play } = useContext(PlayerContext);
-  const playCurrentTrack = async () => {
-    console.log(track);
-    setTrack(track);
-    await audioRef;
-    play();
-  };
+  const { playWithTrack } = useContext(PlayerContext);
 
   return (
     <div className="track">
@@ -18,7 +12,7 @@ export const TrackItem = ({ audioRef, track, title, image, duration, id }) => {
         <p className="track__number-num">{id}</p>
         <assets.play_icon
           className="track__number-play"
-          onClick={playCurrentTrack}
+          onClick={() => playWithTrack(track)}
         />
       </div>
 

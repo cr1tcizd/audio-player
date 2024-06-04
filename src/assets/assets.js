@@ -12,6 +12,7 @@ import arrowRight_icon from './arrow-right.svg?react'
 import search__icon from './search.svg?react'
 import watch_icon from './watch.svg?react'
 import volumeMuted_icon from './volume-muted.svg?react'
+import albumImg from './album.jpg'
 
 import song1 from './Imagine Dragons - Bones.mp3'
 import song2 from './Imagine Dragons - Believer.mp3'
@@ -33,6 +34,7 @@ export const assets = {
   search__icon,
   watch_icon,
   volumeMuted_icon,
+  albumImg
 }
 
 export const localMusicData = [
@@ -69,4 +71,13 @@ export const localMusicData = [
     audio: song4,
     duration: '2:53'
   },
+]
+
+export const albumList = [
+  {
+    id: 1,
+    title: 'My Playlist',
+    image: albumImg,
+    trackList: localMusicData,
+  }
 ]

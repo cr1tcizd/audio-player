@@ -11,13 +11,19 @@
   backdrop-filter: blur(74px);
   
   .player__btn {
+    align-self: center;
     cursor: pointer;
+
+    &__play {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   .player__progress {
     position: absolute;
     width: 100%;
-    height: 4px;
+    height: 10px;
     top: 0;
     left: 0;
     background: #656565;
@@ -84,7 +90,7 @@
       &-progress {
         position: relative;
         width: 77px;
-        height: 4px;
+        height: 5px;
         background-color: #656565;
         border-radius: 999px;
         cursor: pointer;
